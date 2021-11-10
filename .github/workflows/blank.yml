@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+      boolean:
+        type: boolean
+      choice:
+        type: choice
+        options:
+        - foo
+        - bar
+        - baz
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: greet
+        run: | 
+          echo "environment is ${{ github.events.inputs.environment }}"
+          echo "boolean is ${{ github.events.inputs.boolean }}"
+          echo "choice is ${{ github.events.inputs.choice }}"
+          
