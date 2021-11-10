@@ -5,10 +5,13 @@ on:
     inputs:
       environment:
         type: environment
+        description: Select the environment
       boolean:
         type: boolean
+        description: True or False
       choice:
         type: choice
+        description: Make a choice
         options:
         - foo
         - bar
