@@ -6,9 +6,12 @@ on:
       environment:
         type: environment
         description: Select the environment
-      boolean:
+      portal:
         type: boolean
-        description: True or False
+        description: Portal
+      dashboard:
+        type: boolean
+        description: Dashboard
       choice:
         type: choice
         description: Make a choice
@@ -26,6 +29,7 @@ jobs:
       - name: greet
         run: | 
           echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
-          echo "boolean is ${{ github.event.inputs.boolean }}" / ${{ inputs.boolean }} 
+          echo "portal is ${{ github.event.inputs.portal }}" / ${{ inputs.portal }} 
+          echo "dashboard is ${{ github.event.inputs.dashboard }}" / ${{ inputs.dashboard }} 
           echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
           
